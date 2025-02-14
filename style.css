@@ -1,0 +1,12 @@
+.barreNavigation {
+	width: 100%;
+	background-color: #eee;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.barreNavigation button {
+	padding: 8px 16px;
+	cursor: pointer;
+}
