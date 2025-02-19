@@ -5,4 +5,4 @@
 $host = "127.0.0.1";
 $user = "root";
 $pass = "";
-$base = "Projet_Cocktail_PHP";
+$base = "gestion_cocktails";

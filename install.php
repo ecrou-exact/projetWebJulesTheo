@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 // Paramètres de connexion à MySQL
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'gestion_cocktails');
@@ -13,6 +16,8 @@ try {
     $pdo = new PDO('mysql:host=' . DB_HOST . ';charset=utf8mb4', DB_USER, DB_PASSWORD);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    // Suppression de la base de données si elle existe
+    $pdo->exec("DROP DATABASE IF EXISTS " . DB_NAME);
     // Création de la base de données
     $pdo->exec("CREATE DATABASE IF NOT EXISTS " . DB_NAME);
     $pdo->exec("USE " . DB_NAME);
@@ -58,6 +63,10 @@ try {
 
     // Inclusion des données
     include 'Donnees.inc.php';
+
+
+
+
 
     /**
      * inclusion des Aliments dans la table aliment

@@ -114,14 +114,22 @@ if (isset($_POST['connexion']) && isset($_POST['loginConnexion']) && isset($_POS
 
     </div>
 
-
     <?php if (isset($_POST["afficheInscription"])) {
         include "inscription.php";
     } else if (isset($_POST["afficheProfil"])) {
         include "profil.php";
+    } else if (isset($_POST['ListeRecettes']) || isset($_POST['retour'])  || isset($_GET['ingredient_id']) || isset($_GET['reinitialiser'])) {
+        //include  'afficherCocktails.php'; 
+    ?>
+        <h1>Liste des Recettes</h1>
+        <?php
+        include 'listesRecette.php';
+        ?>
+    <?php
     } else { ?>
         <h1>Bienvenue sur l'application de gestion de cocktails</h1>
-        <p><a href="install.php">Créer la base de données</a></p>
+        <p><a href="install.php" target="_blank">Créer la base de données</a></p>
+
     <?php
     }
     ?>
